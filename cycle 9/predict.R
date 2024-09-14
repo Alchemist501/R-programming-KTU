@@ -1,0 +1,7 @@
+x <- c(123,124,125,156)
+y<-c(12,13,14,15)
+relation <- lm(y~x)
+a <- data.frame(x=170)
+result <- predict(relation,a)
+print(result)
+plot(y,x,abline(lm(y~x)),cex=1.3,pch=16)

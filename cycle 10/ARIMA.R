@@ -1,0 +1,13 @@
+# Predict the next 10 sale values by using BJsales dataset present in R package “forecast” using ARIMA model.
+# Plot the graph showing the forecast. (Install and use the required package)
+install.packages("forecast")
+library(forecast)
+png(file="TimeseriesGFG.png")
+plot(BJsales,main="Timeseries",col.main="green")
+dev.off()
+png(file="TimeSeriesArima.png")
+fit <- auto.arima(BJsales)
+forecastedValues <- forecast(fit,10)
+print(forecastedValues)
+plot(forecastedValues,main="Timeseries")
+dev.off()
